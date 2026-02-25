@@ -1,6 +1,7 @@
 // Mobile drawer
 const menuBtn = document.getElementById("menuBtn");
 const drawer = document.getElementById("drawer");
+const topbar = document.getElementById("topbar");
 
 function setDrawer(open) {
   if (open) {
@@ -20,17 +21,25 @@ menuBtn?.addEventListener("click", () => {
 });
 
 drawer?.addEventListener("click", (e) => {
-  // close if user clicks the overlay, not the menu itself
   if (e.target === drawer) setDrawer(false);
 });
 
-// Close drawer when clicking a link
 document.querySelectorAll(".drawerLink").forEach((a) => {
   a.addEventListener("click", () => setDrawer(false));
 });
 
 // Footer year
 document.getElementById("year").textContent = new Date().getFullYear();
+
+// Topbar entrance
+requestAnimationFrame(() => topbar?.classList.add("ready"));
+
+// Topbar scroll state
+window.addEventListener("scroll", () => {
+  if (!topbar) return;
+  const y = window.scrollY || 0;
+  topbar.classList.toggle("scrolled", y > 16);
+}, { passive: true });
 
 // Dialog / modal handling
 function openDialog(id) {
@@ -47,8 +56,6 @@ document.querySelectorAll("[data-open]").forEach((btn) => {
 document.querySelectorAll("[data-close]").forEach((btn) => {
   btn.addEventListener("click", () => closeDialogs());
 });
-
-// Close modal on backdrop click
 document.querySelectorAll("dialog").forEach((d) => {
   d.addEventListener("click", (e) => {
     const rect = d.getBoundingClientRect();
@@ -57,13 +64,11 @@ document.querySelectorAll("dialog").forEach((d) => {
       e.clientY <= rect.top + rect.height &&
       rect.left <= e.clientX &&
       e.clientX <= rect.left + rect.width;
-
-    // Clicking outside closes
     if (!inDialog) d.close();
   });
 });
 
-// Contact form -> mailto (no backend required)
+// Contact form -> mailto (no backend)
 const form = document.getElementById("contactForm");
 const hint = document.getElementById("formHint");
 
@@ -80,45 +85,40 @@ form?.addEventListener("submit", (e) => {
   const body = encodeURIComponent(
     `Name: ${name}\nEmail: ${email}\nBusiness: ${business || "-"}\n\nMessage:\n${message}\n`
   );
-  // FC Jerseys iframe fallback if embedding is blocked
-(function () {
-  const frame = document.querySelector('.previewFrame');
-  const fallback = document.getElementById('fcPreviewFallback');
-  if (!frame || !fallback) return;
 
-  let loaded = false;
-
-  frame.addEventListener('load', () => {
-    loaded = true;
-    // If it loads, keep fallback hidden
-    fallback.hidden = true;
-  });
-
-  // If it doesn't "load" in a reasonable time, show fallback
-  // (Some blocked iframes never fully load or show errors)
-  setTimeout(() => {
-    if (!loaded) fallback.hidden = false;
-  }, 2500);
-})();
-
-  // Opens the user's email client
   window.location.href = `mailto:balmafalni@gmail.com?subject=${subject}&body=${body}`;
 
-  if (hint) {
-    hint.textContent = "If your email app didn’t open, copy: balmafalni@gmail.com";
-  }
+  if (hint) hint.textContent = "If your email app didn’t open, copy: balmafalni@gmail.com";
 });
 
+// Scroll-reveal (animates the whole site)
+(function () {
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce) {
+    document.querySelectorAll(".reveal").forEach((el) => el.classList.add("in"));
+    return;
+  }
+
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (e.isIntersecting) {
+        e.target.classList.add("in");
+        io.unobserve(e.target);
+      }
+    }
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+})();
 
 // Subtle ambient parallax (desktop only)
 (function () {
   const ambient = document.querySelector(".ambient");
   if (!ambient) return;
 
-  const mq = window.matchMedia("(max-width: 720px)");
-  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-  if (mq.matches || reduce.matches) return;
+  const isMobile = window.matchMedia("(max-width: 980px)").matches;
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (isMobile || reduce) return;
 
   let ticking = false;
   window.addEventListener("scroll", () => {
@@ -131,4 +131,51 @@ form?.addEventListener("submit", (e) => {
       ticking = false;
     });
   }, { passive: true });
+})();
+
+// Tilt effect on hover (desktop only, light)
+(function () {
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const isMobile = window.matchMedia("(max-width: 980px)").matches;
+  if (reduce || isMobile) return;
+
+  const maxTilt = 6; // degrees
+  const cards = document.querySelectorAll(".tilt");
+
+  cards.forEach((card) => {
+    card.addEventListener("mousemove", (e) => {
+      const r = card.getBoundingClientRect();
+      const cx = r.left + r.width / 2;
+      const cy = r.top + r.height / 2;
+      const dx = (e.clientX - cx) / (r.width / 2);
+      const dy = (e.clientY - cy) / (r.height / 2);
+
+      const rx = (-dy * maxTilt).toFixed(2);
+      const ry = (dx * maxTilt).toFixed(2);
+
+      card.style.transform = `translateY(-4px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "";
+    });
+  });
+})();
+
+// FC Jerseys iframe fallback if embedding is blocked
+(function () {
+  const frame = document.querySelector(".previewFrame");
+  const fallback = document.getElementById("fcPreviewFallback");
+  if (!frame || !fallback) return;
+
+  let loaded = false;
+
+  frame.addEventListener("load", () => {
+    loaded = true;
+    fallback.hidden = true;
+  });
+
+  setTimeout(() => {
+    if (!loaded) fallback.hidden = false;
+  }, 2500);
 })();
