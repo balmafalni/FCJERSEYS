@@ -276,30 +276,53 @@ h1{
 .card h3{margin:0 0 6px; font-size: 15px}
 .card p{margin:0; color: var(--muted); font-size: 13px; line-height: 1.5}
 
-.scrollHint{
+/* Cinematic scroll cue */
+.scrollCue{
   position:absolute;
-  left:50%; bottom: 18px;
-  transform: translateX(-50%);
-  width: 28px; height: 44px;
-  border-radius: 999px;
-  border:1px solid rgba(255,255,255,.18);
-  background: rgba(255,255,255,.04);
-  display:flex; align-items:flex-start; justify-content:center;
-  padding-top: 9px;
+  left:50%;
+  bottom:18px;
+  transform:translateX(-50%);
+  width: 34px;
+  height: 54px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-end;
+  gap:6px;
   z-index:1;
-}
-.scrollHint span{
-  width: 6px; height: 6px;
-  border-radius: 99px;
-  background: rgba(255,255,255,.75);
-  animation: drop 1.35s infinite ease-in-out;
-}
-@keyframes drop{
-  0%{transform: translateY(0); opacity:.8}
-  70%{transform: translateY(18px); opacity:.25}
-  100%{transform: translateY(0); opacity:.8}
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,.55));
 }
 
+.cueLine{
+  width:1px;
+  height:18px;
+  background: linear-gradient(180deg, rgba(198,161,91,.0), rgba(198,161,91,.75));
+  opacity:.9;
+}
+
+.cueChev{
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid rgba(255,255,255,.78);
+  border-bottom: 2px solid rgba(255,255,255,.78);
+  transform: rotate(45deg);
+  opacity:.35;
+  animation: chev 1.35s infinite ease-in-out;
+}
+
+.cueChev:nth-child(2){ animation-delay: 0s; }
+.cueChev:nth-child(3){ animation-delay: .18s; }
+
+@keyframes chev{
+  0%   { transform: translateY(0) rotate(45deg); opacity:.15; }
+  55%  { transform: translateY(10px) rotate(45deg); opacity:.85; }
+  100% { transform: translateY(0) rotate(45deg); opacity:.15; }
+}
+
+/* Hide cue if user prefers reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .cueChev{ animation: none; opacity:.55; }
+}
 /* Sections */
 .section{padding: 74px 0}
 .sectionAlt{
