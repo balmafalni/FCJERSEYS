@@ -110,10 +110,24 @@
         </aside>
       </div>
 
-      <div class="scrollCue" aria-hidden="true">
-  <div class="cueLine"></div>
-  <div class="cueChev"></div>
-  <div class="cueChev"></div>
+  <div class="rocketCue" aria-hidden="true">
+  <svg viewBox="0 0 220 60" class="rocketSvg">
+    <!-- sine path -->
+    <path id="wavePath"
+          d="M0 30 Q 30 5 60 30 T 120 30 T 180 30 T 240 30"
+          fill="none"
+          stroke="rgba(255,255,255,.15)"
+          stroke-width="1.2"
+          stroke-dasharray="3 6" />
+
+    <!-- rocket -->
+    <g class="rocket">
+      <path d="M0 -6 L14 0 L0 6 Z"
+            fill="#c6a15b"/>
+      <circle cx="-3" cy="0" r="2.2"
+              fill="rgba(255,255,255,.9)"/>
+    </g>
+  </svg>
 </div>
     </section>
 
