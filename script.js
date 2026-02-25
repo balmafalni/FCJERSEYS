@@ -108,3 +108,27 @@ form?.addEventListener("submit", (e) => {
     hint.textContent = "If your email app didn’t open, copy: balmafalni@gmail.com";
   }
 });
+
+
+// Subtle ambient parallax (desktop only)
+(function () {
+  const ambient = document.querySelector(".ambient");
+  if (!ambient) return;
+
+  const mq = window.matchMedia("(max-width: 720px)");
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  if (mq.matches || reduce.matches) return;
+
+  let ticking = false;
+  window.addEventListener("scroll", () => {
+    if (ticking) return;
+    ticking = true;
+
+    requestAnimationFrame(() => {
+      const y = window.scrollY || 0;
+      ambient.style.transform = `translateY(${y * 0.03}px)`;
+      ticking = false;
+    });
+  }, { passive: true });
+})();

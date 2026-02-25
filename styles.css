@@ -327,6 +327,159 @@ h1{
   .desktopOnly{ display:none; }
 }
 
+
+/* Section title row */
+.sectionTitleRow{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  width:100%;
+}
+
+.signals{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+/* Shared signal styling */
+.signal{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:44px;
+  height:36px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+  overflow:hidden;
+}
+
+.signal .chip{
+  font-size:13px;
+  font-weight:800;
+  color: rgba(255,255,255,.85);
+  letter-spacing:.02em;
+  z-index:2;
+}
+
+/* Web: typing cursor sweep */
+.signal.web::after{
+  content:"";
+  position:absolute;
+  width:2px;
+  height:16px;
+  background: rgba(198,161,91,.95);
+  border-radius:99px;
+  left:10px;
+  top:50%;
+  transform:translateY(-50%);
+  animation: cursorSweep 2.1s ease-in-out infinite;
+  opacity:.9;
+}
+
+/* Ambient background icons */
+.ambient{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:1; /* behind content, above background */
+  opacity:.18;
+  mix-blend-mode: screen;
+}
+
+.ambient .a{
+  position:absolute;
+  font-weight:900;
+  color: rgba(198,161,91,.35);
+  filter: blur(.15px);
+  animation: floaty 8s ease-in-out infinite;
+}
+
+/* Positions */
+.ambient .a:nth-child(1){ left: 8%;  top: 18%; font-size: 30px; animation-delay: 0s; }
+.ambient .a:nth-child(2){ left: 75%; top: 22%; font-size: 34px; animation-delay: 1.2s; color: rgba(255,255,255,.25); }
+.ambient .a:nth-child(3){ left: 55%; top: 64%; font-size: 32px; animation-delay: 2.1s; }
+
+.ambient .a:nth-child(4){ left: 18%; top: 70%; font-size: 28px; animation-delay: 3.2s; color: rgba(255,255,255,.22); }
+.ambient .a:nth-child(5){ left: 88%; top: 58%; font-size: 30px; animation-delay: 4.0s; }
+.ambient .a:nth-child(6){ left: 42%; top: 10%; font-size: 26px; animation-delay: 4.8s; color: rgba(255,255,255,.18); }
+
+@keyframes floaty{
+  0%   { transform: translateY(0) translateX(0); opacity:.45; }
+  50%  { transform: translateY(-16px) translateX(10px); opacity:.75; }
+  100% { transform: translateY(0) translateX(0); opacity:.45; }
+}
+
+/* Hide ambient layer on phones (cleaner + faster) */
+@media (max-width: 720px){
+  .ambient{ display:none; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .ambient .a{ animation:none; }
+}
+
+@keyframes cursorSweep{
+  0%{ left:10px; opacity:.2; }
+  25%{ opacity:1; }
+  50%{ left:32px; opacity:1; }
+  100%{ left:10px; opacity:.2; }
+}
+
+/* Photo: shutter ring pulse */
+.signal.photo .shutter{
+  position:absolute;
+  inset:0;
+  border-radius:14px;
+  box-shadow: inset 0 0 0 0 rgba(198,161,91,.0);
+  animation: shutterPulse 2.4s ease-in-out infinite;
+}
+@keyframes shutterPulse{
+  0%{ box-shadow: inset 0 0 0 0 rgba(198,161,91,.0); }
+  45%{ box-shadow: inset 0 0 0 10px rgba(198,161,91,.10); }
+  100%{ box-shadow: inset 0 0 0 0 rgba(198,161,91,.0); }
+}
+
+/* Social: upward spark line */
+.signal.social .spark{
+  position:absolute;
+  width:36px;
+  height:2px;
+  background: linear-gradient(90deg, rgba(255,255,255,.0), rgba(255,255,255,.65), rgba(198,161,91,.95));
+  top:50%;
+  transform: translateY(-50%) rotate(-18deg);
+  animation: sparkMove 1.9s ease-in-out infinite;
+  opacity:.75;
+}
+@keyframes sparkMove{
+  0%{ transform: translateY(-50%) rotate(-18deg) translateX(-22px); opacity:.25; }
+  40%{ opacity:.85; }
+  100%{ transform: translateY(-50%) rotate(-18deg) translateX(22px); opacity:.25; }
+}
+
+/* Mobile spacing: signals drop below title */
+@media (max-width: 720px){
+  .sectionTitleRow{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .signal.web::after,
+  .signal.photo .shutter,
+  .signal.social .spark{
+    animation:none;
+  }
+}
+
+
 @keyframes chev{
   0%   { transform: translateY(0) rotate(45deg); opacity:.15; }
   55%  { transform: translateY(10px) rotate(45deg); opacity:.85; }
