@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b0b0f" />
+
+  <title>BEIN Studio — Bashar Al Mafalni</title>
+  <meta name="description" content="Cinematic websites and content for businesses that want to stand out. Web design, photography, and Meta ads by Bashar Al Mafalni." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="BEIN Studio — Bashar Al Mafalni" />
+  <meta property="og:description" content="Cinematic websites and content for businesses that want to stand out." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/og.jpg" />
+
+  <link rel="preload" as="image" href="assets/hero.jpg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Decorative grain -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Top nav -->
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="BEIN Studio Home">
+      <span class="brandMark">BEIN</span><span class="brandSub">Studio</span>
+    </a>
+
+    <nav class="nav">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="pill">Email</a>
+    </nav>
+
+    <button class="menuBtn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- Mobile drawer -->
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawerInner">
+      <a href="#work" class="drawerLink">Work</a>
+      <a href="#services" class="drawerLink">Services</a>
+      <a href="#about" class="drawerLink">About</a>
+      <a href="#contact" class="drawerLink strong">Email Me</a>
+      <a href="https://www.instagram.com/bashar.mafalani/" target="_blank" rel="noreferrer" class="drawerLink">
+        Instagram
+      </a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <main id="top">
+    <section class="hero">
+      <div class="heroBg">
+        <img src="assets/hero.jpg" alt="" />
+        <div class="heroOverlay"></div>
+      </div>
+
+      <div class="container heroGrid">
+        <div class="heroText">
+          <p class="eyebrow">English / Arabic</p>
+          <h1>
+            Bashar Al Mafalni
+            <span class="headlineAccent">Web Designer</span>
+          </h1>
+          <p class="lead">
+            Cinematic websites and content for businesses that want to stand out.
+            Custom web design, photography, and Meta ads — built to attract customers.
+          </p>
+
+          <div class="heroCtas">
+            <a class="btn primary" href="#contact">Email Me</a>
+            <a class="btn ghost" href="#work">View Work</a>
+          </div>
+
+          <div class="heroMeta">
+            <div class="metaItem">
+              <span class="metaK">Studio</span>
+              <span class="metaV">BEIN Studio</span>
+            </div>
+            <div class="metaItem">
+              <span class="metaK">Phone</span>
+              <span class="metaV"><a href="tel:+12262606527">226-260-6527</a></span>
+            </div>
+            <div class="metaItem">
+              <span class="metaK">Email</span>
+              <span class="metaV"><a href="mailto:balmafalni@gmail.com">balmafalni@gmail.com</a></span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="heroCards" aria-label="Highlights">
+          <div class="card">
+            <h3>Web Design</h3>
+            <p>Modern, fast, conversion-focused custom builds.</p>
+          </div>
+          <div class="card">
+            <h3>Photography</h3>
+            <p>Cinematic visuals — products, branding, events, and more.</p>
+          </div>
+          <div class="card">
+            <h3>Meta Ads</h3>
+            <p>Instagram & Facebook campaigns that drive leads and attention.</p>
+          </div>
+        </aside>
+      </div>
+
+      <div class="scrollHint" aria-hidden="true">
+        <span></span>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section id="work" class="section">
+      <div class="container">
+        <div class="sectionHead">
+          <h2>Work</h2>
+          <p class="sub">
+            Selected projects + visuals. Clean presentation, premium feel.
+          </p>
+        </div>
+
+        <div class="workGrid">
+          <!-- Featured website -->
+          <article class="workCard featured">
+            <div class="workThumb livePreview">
+  <div class="previewTopbar">
+    <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+    <span class="previewUrl">fcjerseys.ca</span>
+    <a class="previewOpen" href="https://fcjerseys.ca" target="_blank" rel="noreferrer">Open ↗</a>
+  </div>
+
+  <iframe
+    class="previewFrame"
+    src="https://fcjerseys.ca"
+    title="FC Jerseys live website preview"
+    loading="lazy"
+    referrerpolicy="no-referrer"
+    sandbox="allow-forms allow-scripts allow-same-origin allow-popups"
+  ></iframe>
+
+  <!-- Fallback overlay (shown only if iframe fails) -->
+  <div class="previewFallback" id="fcPreviewFallback" hidden>
+    <p>Live preview is blocked by the website’s security settings.</p>
+    <a class="btn small" href="https://fcjerseys.ca" target="_blank" rel="noreferrer">Open site ↗</a>
+  </div>
+</div>
+            <div class="workBody">
+              <div class="workTop">
+                <h3>FC Jerseys</h3>
+                <span class="tag">Website</span>
+              </div>
+              <p>
+                Custom e-commerce website focused on product clarity, speed, and conversion.
+              </p>
+              <div class="workActions">
+                <a class="btn small" href="https://fcjerseys.ca" target="_blank" rel="noreferrer">Visit Site</a>
+                <button class="btn small ghost" data-open="case-fc">Case Study</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Instagram photography/social -->
+          <article class="workCard">
+            <div class="workBody">
+              <div class="workTop">
+                <h3>Photography + Social</h3>
+                <span class="tag">Instagram</span>
+              </div>
+              <p>
+                Cinematic visuals and content. Portfolio, shoots, and brand work.
+              </p>
+              <div class="workActions">
+                <a class="btn small" href="https://www.instagram.com/bashar.mafalani/" target="_blank" rel="noreferrer">
+                  View Instagram
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Placeholder slots for future projects -->
+          <article class="workCard placeholder">
+            <div class="workBody">
+              <div class="workTop">
+                <h3>Next Project</h3>
+                <span class="tag">Website</span>
+              </div>
+              <p>Add another site here when ready.</p>
+              <div class="workActions">
+                <button class="btn small ghost" disabled>Coming Soon</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="workCard placeholder">
+            <div class="workBody">
+              <div class="workTop">
+                <h3>Next Project</h3>
+                <span class="tag">Ads</span>
+              </div>
+              <p>Add a Meta ads case study with results.</p>
+              <div class="workActions">
+                <button class="btn small ghost" disabled>Coming Soon</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section sectionAlt">
+      <div class="container">
+        <div class="sectionHead">
+          <h2>Services</h2>
+          <p class="sub">Three services that work together as one brand system.</p>
+        </div>
+
+        <div class="servicesGrid">
+          <div class="service">
+            <h3>Website Design</h3>
+            <ul>
+              <li>Custom design + development</li>
+              <li>Mobile-first, fast load, clean UI</li>
+              <li>SEO basics + launch support</li>
+              <li>Optional e-commerce</li>
+            </ul>
+            <a class="textLink" href="#contact">Request pricing →</a>
+          </div>
+
+          <div class="service">
+            <h3>Photography</h3>
+            <ul>
+              <li>Brand, product, events, portraits</li>
+              <li>Cinematic editing + consistency</li>
+              <li>Travel available</li>
+            </ul>
+            <a class="textLink" href="#contact">Book a shoot →</a>
+          </div>
+
+          <div class="service">
+            <h3>Meta Ads</h3>
+            <ul>
+              <li>Instagram + Facebook campaigns</li>
+              <li>Creative direction + ad assets</li>
+              <li>Optimization + reporting</li>
+            </ul>
+            <a class="textLink" href="#contact">Run ads →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section">
+      <div class="container">
+        <div class="sectionHead">
+          <h2>Process</h2>
+          <p class="sub">Simple, fast, and clear from start to launch.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <span class="stepNum">01</span>
+            <h3>Brief</h3>
+            <p>Goals, brand, content, and what “success” looks like.</p>
+          </div>
+          <div class="step">
+            <span class="stepNum">02</span>
+            <h3>Direction</h3>
+            <p>Layout + visual style. Cinematic, modern, clean.</p>
+          </div>
+          <div class="step">
+            <span class="stepNum">03</span>
+            <h3>Build</h3>
+            <p>Design + development with speed and mobile priority.</p>
+          </div>
+          <div class="step">
+            <span class="stepNum">04</span>
+            <h3>Launch</h3>
+            <p>Final polish, revisions, deployment, and support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section sectionAlt">
+      <div class="container aboutGrid">
+        <div>
+          <h2>About</h2>
+          <p class="sub">
+            I’m Bashar Al Mafalni — web designer and visual creator with 5 years of experience.
+            I help businesses look premium online through cohesive web design, photography, and Meta advertising.
+          </p>
+
+          <div class="aboutFacts">
+            <div class="fact">
+              <span class="factK">Experience</span>
+              <span class="factV">5+ years</span>
+            </div>
+            <div class="fact">
+             <span class="factK">Focus</span>
+             <span class="factV">Local Businesses</span>
+            </div>
+            <div class="fact">
+              <span class="factK">Languages</span>
+              <span class="factV">English / Arabic</span>
+            </div>
+          </div>
+
+          <div class="aboutLinks">
+            <a class="btn ghost" href="https://www.instagram.com/bashar.mafalani/" target="_blank" rel="noreferrer">
+              Instagram
+            </a>
+            <a class="btn ghost" href="https://fcjerseys.ca" target="_blank" rel="noreferrer">
+              Featured Site
+            </a>
+          </div>
+        </div>
+
+        <div class="quoteCard">
+          <p class="quote">
+            “Cinematic design is not just a look — it’s how you control attention and trust.”
+          </p>
+          <p class="quoteBy">— BEIN Studio</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container contactGrid">
+        <div>
+          <h2>Contact</h2>
+          <p class="sub">
+            Tell me what you need. I’ll reply by email.
+          </p>
+
+          <div class="contactCards">
+            <a class="contactCard" href="mailto:balmafalni@gmail.com">
+              <span class="contactK">Email</span>
+              <span class="contactV">balmafalni@gmail.com</span>
+            </a>
+            <a class="contactCard" href="tel:+12262606527">
+              <span class="contactK">Phone</span>
+              <span class="contactV">226-260-6527</span>
+            </a>
+            <a class="contactCard" href="https://www.instagram.com/bashar.mafalani/" target="_blank" rel="noreferrer">
+              <span class="contactK">Instagram</span>
+              <span class="contactV">@bashar.mafalani</span>
+            </a>
+          </div>
+        </div>
+
+        <form class="form" id="contactForm">
+          <div class="row">
+            <label>
+              Name
+              <input name="name" type="text" placeholder="Your name" autocomplete="name" required />
+            </label>
+            <label>
+              Email
+              <input name="email" type="email" placeholder="you@email.com" autocomplete="email" required />
+            </label>
+          </div>
+
+          <label>
+            Business
+            <input name="business" type="text" placeholder="Business name (optional)" />
+          </label>
+
+          <label>
+            Message
+            <textarea name="message" rows="6" placeholder="What do you need? (website, photos, ads)"></textarea>
+          </label>
+
+          <div class="formBottom">
+            <button class="btn primary" type="submit">Send Email</button>
+            <p class="tiny" id="formHint">
+            
+            </p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container footerInner">
+        <p>© <span id="year"></span> BEIN Studio — Bashar Al Mafalni</p>
+        <div class="footerLinks">
+          <a href="#top">Top</a>
+          <a href="#work">Work</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Case Study Modal -->
+  <dialog class="modal" id="case-fc">
+    <div class="modalInner">
+      <button class="modalClose" data-close aria-label="Close">✕</button>
+      <h3>FC Jerseys — Case Study</h3>
+      <p class="muted">
+        A custom storefront focused on product clarity, clean UI, and conversion-friendly structure.
+        (Add metrics here later: speed score, sales, conversion uplift, etc.)
+      </p>
+      <div class="modalActions">
+        <a class="btn small" href="https://fcjerseys.ca" target="_blank" rel="noreferrer">Visit Site</a>
+        <button class="btn small ghost" data-close>Close</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="main.js"></script>
+</body>
+</html>
