@@ -22,27 +22,17 @@
   <!-- Decorative grain -->
   <div class="grain" aria-hidden="true"></div>
 
-  <!-- Ambient background icons (desktop only) -->
-  <div class="ambient desktopOnly" aria-hidden="true">
-    <span class="a web">&lt;/&gt;</span>
-    <span class="a photo">◉</span>
-    <span class="a social">↗</span>
-    <span class="a web">&lt;/&gt;</span>
-    <span class="a photo">◉</span>
-    <span class="a social">↗</span>
-  </div>
-
   <!-- Top nav -->
-  <header class="topbar" id="topbar">
+  <header class="topbar">
     <a class="brand" href="#top" aria-label="BEIN Studio Home">
       <span class="brandMark">BEIN</span><span class="brandSub">Studio</span>
     </a>
 
     <nav class="nav">
-      <a href="#work" class="navLink">Work</a>
-      <a href="#services" class="navLink">Services</a>
-      <a href="#about" class="navLink">About</a>
-      <a href="#contact" class="pill navLink">Email</a>
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="pill">Email</a>
     </nav>
 
     <button class="menuBtn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
@@ -63,17 +53,17 @@
     </div>
   </div>
 
+  <!-- HERO -->
   <main id="top">
-    <!-- HERO -->
     <section class="hero">
-      <div class="heroBg" aria-hidden="true">
+      <div class="heroBg">
         <img src="assets/hero.jpg" alt="" />
         <div class="heroOverlay"></div>
       </div>
 
       <div class="container heroGrid">
-        <div class="heroText reveal">
-          <p class="eyebrow">English / Arabic</p>
+        <div class="heroText">
+          <p class="eyebrow">Remote • English / Arabic</p>
           <h1>
             Bashar Al Mafalni
             <span class="headlineAccent">Web Designer</span>
@@ -104,126 +94,104 @@
           </div>
         </div>
 
-        <aside class="heroCards reveal" aria-label="Highlights">
-          <div class="card tilt">
+        <aside class="heroCards" aria-label="Highlights">
+          <div class="card">
             <h3>Web Design</h3>
             <p>Modern, fast, conversion-focused custom builds.</p>
           </div>
-          <div class="card tilt">
+          <div class="card">
             <h3>Photography</h3>
             <p>Cinematic visuals — products, branding, events, and more.</p>
           </div>
-          <div class="card tilt">
+          <div class="card">
             <h3>Meta Ads</h3>
             <p>Instagram & Facebook campaigns that drive leads and attention.</p>
           </div>
         </aside>
       </div>
 
-      <!-- Multiple rockets sine-wave (desktop only) -->
       <div class="rocketCue full desktopOnly" aria-hidden="true">
-        <svg class="rocketSvg" viewBox="0 0 1000 90" preserveAspectRatio="none">
-          <path
-            id="rocketPath"
-            d="M0 45
-               Q 125 10 250 45
-               T 500 45
-               T 750 45
-               T 1000 45"
-            fill="none"
-            stroke="rgba(255,255,255,.12)"
-            stroke-width="1.5"
-            stroke-dasharray="4 10"
-          />
+  <svg class="rocketSvg" viewBox="0 0 1000 90" preserveAspectRatio="none">
+    <!-- wave path -->
+    <path
+      id="rocketPath"
+      d="M0 45
+         Q 125 10 250 45
+         T 500 45
+         T 750 45
+         T 1000 45"
+      fill="none"
+      stroke="rgba(255,255,255,.12)"
+      stroke-width="1.5"
+      stroke-dasharray="4 10"
+    />
 
-          <!-- Rocket 1 -->
-          <g filter="url(#softShadow)" opacity="0.95">
-            <g>
-              <path d="M0 -8 L18 0 L0 8 Z" fill="#c6a15b"></path>
-              <circle cx="-4" cy="0" r="2.6" fill="rgba(255,255,255,.9)"></circle>
-            </g>
-            <animateMotion dur="7s" repeatCount="indefinite" rotate="auto" begin="0s">
-              <mpath href="#rocketPath"></mpath>
-            </animateMotion>
-          </g>
+    <!-- Rocket 1 -->
+    <g filter="url(#softShadow)" opacity="0.95">
+      <g>
+        <path d="M0 -8 L18 0 L0 8 Z" fill="#c6a15b"></path>
+        <circle cx="-4" cy="0" r="2.6" fill="rgba(255,255,255,.9)"></circle>
+      </g>
+      <animateMotion dur="7s" repeatCount="indefinite" rotate="auto" begin="0s">
+        <mpath href="#rocketPath"></mpath>
+      </animateMotion>
+    </g>
 
-          <!-- Rocket 2 -->
-          <g filter="url(#softShadow)" opacity="0.70">
-            <g transform="scale(0.9)">
-              <path d="M0 -8 L18 0 L0 8 Z" fill="rgba(255,255,255,.85)"></path>
-              <circle cx="-4" cy="0" r="2.6" fill="rgba(198,161,91,.95)"></circle>
-            </g>
-            <animateMotion dur="9s" repeatCount="indefinite" rotate="auto" begin="1.8s">
-              <mpath href="#rocketPath"></mpath>
-            </animateMotion>
-          </g>
+    <!-- Rocket 2 (slower + delayed) -->
+    <g filter="url(#softShadow)" opacity="0.75">
+      <g transform="scale(0.9)">
+        <path d="M0 -8 L18 0 L0 8 Z" fill="rgba(255,255,255,.85)"></path>
+        <circle cx="-4" cy="0" r="2.6" fill="rgba(198,161,91,.95)"></circle>
+      </g>
+      <animateMotion dur="9s" repeatCount="indefinite" rotate="auto" begin="1.8s">
+        <mpath href="#rocketPath"></mpath>
+      </animateMotion>
+    </g>
 
-          <!-- Rocket 3 -->
-          <g filter="url(#softShadow)" opacity="0.55">
-            <g transform="scale(0.8)">
-              <path d="M0 -8 L18 0 L0 8 Z" fill="rgba(198,161,91,.75)"></path>
-              <circle cx="-4" cy="0" r="2.6" fill="rgba(255,255,255,.9)"></circle>
-            </g>
-            <animateMotion dur="6s" repeatCount="indefinite" rotate="auto" begin="3.6s">
-              <mpath href="#rocketPath"></mpath>
-            </animateMotion>
-          </g>
+    <!-- Rocket 3 (faster + more delay) -->
+    <g filter="url(#softShadow)" opacity="0.6">
+      <g transform="scale(0.8)">
+        <path d="M0 -8 L18 0 L0 8 Z" fill="rgba(198,161,91,.75)"></path>
+        <circle cx="-4" cy="0" r="2.6" fill="rgba(255,255,255,.9)"></circle>
+      </g>
+      <animateMotion dur="6s" repeatCount="indefinite" rotate="auto" begin="3.6s">
+        <mpath href="#rocketPath"></mpath>
+      </animateMotion>
+    </g>
 
-          <defs>
-            <filter id="softShadow" x="-20%" y="-50%" width="140%" height="200%">
-              <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="rgba(0,0,0,.55)"/>
-            </filter>
-          </defs>
-        </svg>
-      </div>
-    </section>
+    <!-- defs -->
+    <defs>
+      <filter id="softShadow" x="-20%" y="-50%" width="140%" height="200%">
+        <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="rgba(0,0,0,.55)"/>
+      </filter>
+    </defs>
+  </svg>
+</div>
 
     <!-- WORK -->
     <section id="work" class="section">
       <div class="container">
-        <div class="sectionHead reveal">
-          <div class="sectionTitleRow">
-            <h2>Work</h2>
-            <div class="signals" aria-hidden="true">
-              <div class="signal web"><span class="chip">&lt;/&gt;</span></div>
-              <div class="signal photo"><span class="chip">◉</span><span class="shutter"></span></div>
-              <div class="signal social"><span class="chip">↗</span><span class="spark"></span></div>
-            </div>
-          </div>
-          <p class="sub">Selected projects + visuals. Clean presentation, premium feel.</p>
+        <div class="sectionHead">
+          <h2>Work</h2>
+          <p class="sub">
+            Selected projects + visuals. Clean presentation, premium feel.
+          </p>
         </div>
 
         <div class="workGrid">
-          <!-- Featured website with live preview + fallback -->
-          <article class="workCard featured reveal">
-            <div class="workThumb livePreview">
-              <div class="previewTopbar">
-                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                <span class="previewUrl">fcjerseys.ca</span>
-                <a class="previewOpen" href="https://fcjerseys.ca" target="_blank" rel="noreferrer">Open ↗</a>
-              </div>
-
-              <iframe
-                class="previewFrame"
-                src="https://fcjerseys.ca"
-                title="FC Jerseys live website preview"
-                loading="lazy"
-                referrerpolicy="no-referrer"
-                sandbox="allow-forms allow-scripts allow-same-origin allow-popups"
-              ></iframe>
-
-              <div class="previewFallback" id="fcPreviewFallback" hidden>
-                <p>Live preview is blocked by the website’s security settings.</p>
-                <a class="btn small" href="https://fcjerseys.ca" target="_blank" rel="noreferrer">Open site ↗</a>
-              </div>
+          <!-- Featured website -->
+          <article class="workCard featured">
+            <div class="workThumb">
+              <img src="assets/fcjerseys.jpg" alt="FC Jerseys website preview" loading="lazy" />
             </div>
-
             <div class="workBody">
               <div class="workTop">
                 <h3>FC Jerseys</h3>
                 <span class="tag">Website</span>
               </div>
-              <p>Custom e-commerce website focused on product clarity, clean UI, and conversion-friendly structure.</p>
+              <p>
+                Custom e-commerce website focused on product clarity, speed, and conversion.
+              </p>
               <div class="workActions">
                 <a class="btn small" href="https://fcjerseys.ca" target="_blank" rel="noreferrer">Visit Site</a>
                 <button class="btn small ghost" data-open="case-fc">Case Study</button>
@@ -231,13 +199,16 @@
             </div>
           </article>
 
-          <article class="workCard reveal">
+          <!-- Instagram photography/social -->
+          <article class="workCard">
             <div class="workBody">
               <div class="workTop">
                 <h3>Photography + Social</h3>
                 <span class="tag">Instagram</span>
               </div>
-              <p>Cinematic visuals and content. Portfolio, shoots, and brand work.</p>
+              <p>
+                Cinematic visuals and content. Portfolio, shoots, and brand work.
+              </p>
               <div class="workActions">
                 <a class="btn small" href="https://www.instagram.com/bashar.mafalani/" target="_blank" rel="noreferrer">
                   View Instagram
@@ -246,7 +217,8 @@
             </div>
           </article>
 
-          <article class="workCard placeholder reveal">
+          <!-- Placeholder slots for future projects -->
+          <article class="workCard placeholder">
             <div class="workBody">
               <div class="workTop">
                 <h3>Next Project</h3>
@@ -259,7 +231,7 @@
             </div>
           </article>
 
-          <article class="workCard placeholder reveal">
+          <article class="workCard placeholder">
             <div class="workBody">
               <div class="workTop">
                 <h3>Next Project</h3>
@@ -278,20 +250,13 @@
     <!-- SERVICES -->
     <section id="services" class="section sectionAlt">
       <div class="container">
-        <div class="sectionHead reveal">
-          <div class="sectionTitleRow">
-            <h2>Services</h2>
-            <div class="signals" aria-hidden="true">
-              <div class="signal web"><span class="chip">&lt;/&gt;</span></div>
-              <div class="signal photo"><span class="chip">◉</span><span class="shutter"></span></div>
-              <div class="signal social"><span class="chip">↗</span><span class="spark"></span></div>
-            </div>
-          </div>
+        <div class="sectionHead">
+          <h2>Services</h2>
           <p class="sub">Three services that work together as one brand system.</p>
         </div>
 
         <div class="servicesGrid">
-          <div class="service reveal tilt">
+          <div class="service">
             <h3>Website Design</h3>
             <ul>
               <li>Custom design + development</li>
@@ -302,7 +267,7 @@
             <a class="textLink" href="#contact">Request pricing →</a>
           </div>
 
-          <div class="service reveal tilt">
+          <div class="service">
             <h3>Photography</h3>
             <ul>
               <li>Brand, product, events, portraits</li>
@@ -312,7 +277,7 @@
             <a class="textLink" href="#contact">Book a shoot →</a>
           </div>
 
-          <div class="service reveal tilt">
+          <div class="service">
             <h3>Meta Ads</h3>
             <ul>
               <li>Instagram + Facebook campaigns</li>
@@ -328,35 +293,28 @@
     <!-- PROCESS -->
     <section class="section">
       <div class="container">
-        <div class="sectionHead reveal">
-          <div class="sectionTitleRow">
-            <h2>Process</h2>
-            <div class="signals" aria-hidden="true">
-              <div class="signal web"><span class="chip">&lt;/&gt;</span></div>
-              <div class="signal photo"><span class="chip">◉</span><span class="shutter"></span></div>
-              <div class="signal social"><span class="chip">↗</span><span class="spark"></span></div>
-            </div>
-          </div>
+        <div class="sectionHead">
+          <h2>Process</h2>
           <p class="sub">Simple, fast, and clear from start to launch.</p>
         </div>
 
         <div class="steps">
-          <div class="step reveal tilt">
+          <div class="step">
             <span class="stepNum">01</span>
             <h3>Brief</h3>
-            <p>Goals, brand, content, and what success looks like.</p>
+            <p>Goals, brand, content, and what “success” looks like.</p>
           </div>
-          <div class="step reveal tilt">
+          <div class="step">
             <span class="stepNum">02</span>
             <h3>Direction</h3>
             <p>Layout + visual style. Cinematic, modern, clean.</p>
           </div>
-          <div class="step reveal tilt">
+          <div class="step">
             <span class="stepNum">03</span>
             <h3>Build</h3>
             <p>Design + development with speed and mobile priority.</p>
           </div>
-          <div class="step reveal tilt">
+          <div class="step">
             <span class="stepNum">04</span>
             <h3>Launch</h3>
             <p>Final polish, revisions, deployment, and support.</p>
@@ -368,18 +326,8 @@
     <!-- ABOUT -->
     <section id="about" class="section sectionAlt">
       <div class="container aboutGrid">
-        <div class="reveal">
-          <div class="sectionHead" style="margin-bottom: 10px;">
-            <div class="sectionTitleRow">
-              <h2>About</h2>
-              <div class="signals" aria-hidden="true">
-                <div class="signal web"><span class="chip">&lt;/&gt;</span></div>
-                <div class="signal photo"><span class="chip">◉</span><span class="shutter"></span></div>
-                <div class="signal social"><span class="chip">↗</span><span class="spark"></span></div>
-              </div>
-            </div>
-          </div>
-
+        <div>
+          <h2>About</h2>
           <p class="sub">
             I’m Bashar Al Mafalni — web designer and visual creator with 5 years of experience.
             I help businesses look premium online through cohesive web design, photography, and Meta advertising.
@@ -391,8 +339,8 @@
               <span class="factV">5+ years</span>
             </div>
             <div class="fact">
-              <span class="factK">Focus</span>
-              <span class="factV">Local Businesses</span>
+              <span class="factK">Working</span>
+              <span class="factV">Remote</span>
             </div>
             <div class="fact">
               <span class="factK">Languages</span>
@@ -401,13 +349,19 @@
           </div>
 
           <div class="aboutLinks">
-            <a class="btn ghost" href="https://www.instagram.com/bashar.mafalani/" target="_blank" rel="noreferrer">Instagram</a>
-            <a class="btn ghost" href="https://fcjerseys.ca" target="_blank" rel="noreferrer">Featured Site</a>
+            <a class="btn ghost" href="https://www.instagram.com/bashar.mafalani/" target="_blank" rel="noreferrer">
+              Instagram
+            </a>
+            <a class="btn ghost" href="https://fcjerseys.ca" target="_blank" rel="noreferrer">
+              Featured Site
+            </a>
           </div>
         </div>
 
-        <div class="quoteCard reveal">
-          <p class="quote">“Cinematic design is not just a look — it’s how you control attention and trust.”</p>
+        <div class="quoteCard">
+          <p class="quote">
+            “Cinematic design is not just a look — it’s how you control attention and trust.”
+          </p>
           <p class="quoteBy">— BEIN Studio</p>
         </div>
       </div>
@@ -416,37 +370,29 @@
     <!-- CONTACT -->
     <section id="contact" class="section">
       <div class="container contactGrid">
-        <div class="reveal">
-          <div class="sectionHead" style="margin-bottom: 10px;">
-            <div class="sectionTitleRow">
-              <h2>Contact</h2>
-              <div class="signals" aria-hidden="true">
-                <div class="signal web"><span class="chip">&lt;/&gt;</span></div>
-                <div class="signal photo"><span class="chip">◉</span><span class="shutter"></span></div>
-                <div class="signal social"><span class="chip">↗</span><span class="spark"></span></div>
-              </div>
-            </div>
-          </div>
-
-          <p class="sub">Tell me what you need. I’ll reply by email.</p>
+        <div>
+          <h2>Contact</h2>
+          <p class="sub">
+            Tell me what you need. I’ll reply by email.
+          </p>
 
           <div class="contactCards">
-            <a class="contactCard tilt" href="mailto:balmafalni@gmail.com">
+            <a class="contactCard" href="mailto:balmafalni@gmail.com">
               <span class="contactK">Email</span>
               <span class="contactV">balmafalni@gmail.com</span>
             </a>
-            <a class="contactCard tilt" href="tel:+12262606527">
+            <a class="contactCard" href="tel:+12262606527">
               <span class="contactK">Phone</span>
               <span class="contactV">226-260-6527</span>
             </a>
-            <a class="contactCard tilt" href="https://www.instagram.com/bashar.mafalani/" target="_blank" rel="noreferrer">
+            <a class="contactCard" href="https://www.instagram.com/bashar.mafalani/" target="_blank" rel="noreferrer">
               <span class="contactK">Instagram</span>
               <span class="contactV">@bashar.mafalani</span>
             </a>
           </div>
         </div>
 
-        <form class="form reveal" id="contactForm">
+        <form class="form" id="contactForm">
           <div class="row">
             <label>
               Name
@@ -470,7 +416,9 @@
 
           <div class="formBottom">
             <button class="btn primary" type="submit">Send Email</button>
-            <p class="tiny" id="formHint">This opens your email app (no backend needed).</p>
+            <p class="tiny" id="formHint">
+              This opens your email app (no backend needed).
+            </p>
           </div>
         </form>
       </div>
@@ -496,7 +444,7 @@
       <h3>FC Jerseys — Case Study</h3>
       <p class="muted">
         A custom storefront focused on product clarity, clean UI, and conversion-friendly structure.
-        Add metrics here later (speed score, sales, conversion uplift, etc.).
+        (Add metrics here later: speed score, sales, conversion uplift, etc.)
       </p>
       <div class="modalActions">
         <a class="btn small" href="https://fcjerseys.ca" target="_blank" rel="noreferrer">Visit Site</a>
