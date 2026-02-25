@@ -110,28 +110,51 @@
         </aside>
       </div>
 
-  <div class="rocketCue full" aria-hidden="true">
-  <svg viewBox="0 0 1000 80" class="rocketSvg" preserveAspectRatio="none">
-    <!-- full-width sine path -->
+<div class="rocketCue full" aria-hidden="true">
+  <svg class="rocketSvg" viewBox="0 0 1000 90" preserveAspectRatio="none">
+    <!-- sine wave guide (subtle) -->
     <path
-      d="M0 40
-         Q 125 10 250 40
-         T 500 40
-         T 750 40
-         T 1000 40"
+      id="rocketPath"
+      d="M0 45
+         Q 125 10 250 45
+         T 500 45
+         T 750 45
+         T 1000 45"
       fill="none"
       stroke="rgba(255,255,255,.14)"
       stroke-width="1.5"
       stroke-dasharray="4 8"
     />
 
-    <!-- rocket -->
-    <g class="rocket">
-      <path d="M0 -8 L18 0 L0 8 Z" fill="#c6a15b"></path>
-      <circle cx="-4" cy="0" r="2.6" fill="rgba(255,255,255,.9)"></circle>
+    <!-- Rocket group that follows the path -->
+    <g filter="url(#softShadow)">
+      <g id="rocketShape">
+        <!-- simple sleek rocket/arrow -->
+        <path d="M0 -8 L18 0 L0 8 Z" fill="#c6a15b"></path>
+        <circle cx="-4" cy="0" r="2.6" fill="rgba(255,255,255,.9)"></circle>
+      </g>
+
+      <animateMotion
+        dur="6.5s"
+        repeatCount="indefinite"
+        rotate="auto"
+        keyTimes="0;0.08;0.92;1"
+        keySplines=".2,.8,.2,1; .2,.8,.2,1; .2,.8,.2,1"
+        calcMode="spline"
+        keyPoints="0;0.08;0.92;1"
+      >
+        <mpath href="#rocketPath"></mpath>
+      </animateMotion>
     </g>
+
+    <!-- defs: subtle shadow -->
+    <defs>
+      <filter id="softShadow" x="-20%" y="-50%" width="140%" height="200%">
+        <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="rgba(0,0,0,.55)"/>
+      </filter>
+    </defs>
   </svg>
-</div>
+</div>  
     </section>
 
     <!-- WORK -->
